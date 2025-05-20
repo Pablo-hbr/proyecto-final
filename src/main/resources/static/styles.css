@@ -1,0 +1,223 @@
+/* Importar fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif; /* Nueva fuente */
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Encabezado principal con imagen de fondo */
+header {
+    text-align: center;
+    color: rgb(250, 249, 249);
+    padding: 80px 20px;
+    background-image: url('images/filipinas.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen al tamaño del header */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+    position: relative; /* Permite superposición */
+}
+
+/* Efecto de superposición para mejorar visibilidad del texto */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+    z-index: 1;
+}
+
+/* Asegurar que el contenido del header esté por encima del overlay */
+header h1, header p, header button {
+    position: relative;
+    z-index: 2;
+}
+
+/* Títulos dentro del header */
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Botón dentro del header */
+header button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+/* Carrusel de imágenes */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 128, 109); /* Fondo azul marino */
+    padding: 10px 0;
+    height: 220px;
+    position: relative;
+}
+
+/* Contenedor de imágenes duplicado */
+.carousel-images {
+    display: flex;
+    width: calc(300px * 12); /* Se duplica la cantidad de imágenes */
+    animation: slide 12s linear infinite;
+}
+
+/* Imágenes del carrusel */
+.carousel-images img {
+    width: 280px;
+    height: 180px;
+    margin: 0 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación para un desplazamiento continuo */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1860px); } /* Se ajusta al total de imágenes */
+}
+
+
+/* Sección de introducción */
+.intro {
+    text-align: center;
+    padding: 30px;
+    color:white;
+    background-color: rgb(144, 141, 141);
+}
+
+.intro h2 {
+    font-size: 28px;
+}
+
+.intro p {
+    font-size: 18px;
+}
+
+/* Sección de beneficios */
+.benefits {
+    text-align: center;
+    padding: 50px 20px;
+    background-color:#464141;
+    color: white;
+}
+.benefits2 {
+    text-align: left;
+    padding: 50px 20px;
+    background-color: rgb(0, 128, 109)f;
+    color: rgb(4, 4, 4);
+
+}
+
+/* Contenedor de las tarjetas */
+.benefit-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos base para las tarjetas */
+.benefit-card {
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover: levanta la tarjeta con sombra */
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Colores personalizados para cada tarjeta */
+.benefit-blue { background-color: #116ed2; } /* Azul */
+.benefit-green { background-color: #1d8e37da; } /* Verde */
+.benefit-orange { background-color: #e18c0c; } /* Naranja */
+.benefit-red { background-color: #c11123; } /* Rojo */
+
+/* Animación de entrada */
+.benefit-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Añadir retraso a cada tarjeta para un efecto escalonado */
+.benefit-blue { animation-delay: 0.2s; }
+.benefit-green { animation-delay: 0.4s; }
+.benefit-orange { animation-delay: 0.6s; }
+.benefit-red { animation-delay: 0.8s; }
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Pie de página */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
