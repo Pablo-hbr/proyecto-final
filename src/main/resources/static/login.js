@@ -43,6 +43,7 @@ function entrar(datosJsonFormulario) {
             window.location.href = 'aleman.html';
             break;
           case 'italiano':
+          case 'italiano':
             window.location.href = 'italiano.html';
             break;
           default:
