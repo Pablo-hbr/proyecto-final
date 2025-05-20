@@ -1,5 +1,4 @@
-package pat.proyectofinal.service;
-
+package pat.proyectofinal.integration.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +12,7 @@ import pat.proyectofinal.model.Role;
 import pat.proyectofinal.repositories.ClaseRepository;
 import pat.proyectofinal.repositories.TokenRepository;
 import pat.proyectofinal.repositories.UsuarioRepository;
+import pat.proyectofinal.service.IdiomasService;
 
 import java.util.Optional;
 

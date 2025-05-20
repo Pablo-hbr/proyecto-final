@@ -1,7 +1,9 @@
-package pat.proyectofinal.model;
+package pat.proyectofinal.unit.model;
 
-
+import pat.proyectofinal.model.Perfil;
 import org.junit.jupiter.api.Test;
+import pat.proyectofinal.model.Role;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PerfilUnitTest {
