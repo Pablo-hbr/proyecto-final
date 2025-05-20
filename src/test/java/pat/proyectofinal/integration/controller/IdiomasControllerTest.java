@@ -1,27 +1,26 @@
-package pat.proyectofinal.controller;
+package pat.proyectofinal.integration.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.Cookie;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import pat.proyectofinal.model.Perfil;
-import pat.proyectofinal.model.PeticionLogin;
+import pat.proyectofinal.controller.IdiomasController;
 import pat.proyectofinal.entity.Token;
 import pat.proyectofinal.entity.Usuario;
+import pat.proyectofinal.model.Perfil;
+import pat.proyectofinal.model.PeticionLogin;
 import pat.proyectofinal.model.PeticionRegistro;
 import pat.proyectofinal.model.Role;
 import pat.proyectofinal.service.IdiomasService;
 
-
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import jakarta.servlet.http.Cookie;
-
-
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @WebMvcTest(IdiomasController.class)

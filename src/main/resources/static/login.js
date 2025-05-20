@@ -5,28 +5,51 @@ function inicializar() {
 }
 
 function entrar(datosJsonFormulario) {
-  fetch('/api/users/me/session', {method: 'post', body: datosJsonFormulario, headers: {'content-type': 'application/json'}})
-      .then(response => {
-        if (!response.ok) {
-          mostrarAviso('✖︎ Credenciales incorrectas', 'error');
-          return null;
+  fetch('/api/users/me/session', {
+    method: 'post',
+    body: datosJsonFormulario,
+    headers: { 'content-type': 'application/json' }
+  })
+    .then(response => {
+      if (!response.ok) {
+        mostrarAviso('✖︎ Credenciales incorrectas', 'error');
+        return null;
+      }
+      return fetch('/api/users/me');
+    })
+    .then(res => {
+      if (!res) return;
+      return res.json();
+    })
+    .then(perfil => {
+      if (!perfil) return;
+
+      if (perfil.role === 'ADMINISTRADOR') {
+        location.href = 'admin.html';
+      } else {
+        const idioma = (perfil.idioma || '').toLowerCase().trim();
+
+        switch (idioma) {
+          case 'FRANCES':
+            window.location.href = 'frances.html';
+            break;
+          case 'INGLES':
+            window.location.href = 'ingles.html';
+            break;
+          case 'ALEMAN':
+            window.location.href = 'aleman.html';
+            break;
+          case 'ITALIANO':
+            window.location.href = 'italiano.html';
+            break;
+          default:
+            alert('No tienes idioma asignado. Contacta con soporte.');
+            break;
         }
-        // Si login correcto, pedimos el perfil
-        return fetch('/api/users/me');
-      })
-      .then(res => {
-        if (!res) return;
-        return res.json();
-      })
-      .then(perfil => {
-        if (!perfil) return;
-        if (perfil.role === 'ADMINISTRADOR') {
-          location.href = 'admin.html';
-        } else {
-          location.href = 'alumno.html';
-        }
-      });
+      }
+    });
 }
+
 
 function mostrarAviso(texto, tipo) {
   const aviso = document.getElementById("aviso");
