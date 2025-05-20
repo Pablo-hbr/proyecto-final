@@ -1,5 +1,8 @@
 package pat.proyectofinal.model;
 
 public enum Idioma {
-    INGLES,ITALIANO, FRANCES
+    INGLES,
+    FRANCES,
+    ALEMAN,
+    ITALIANO
 }
