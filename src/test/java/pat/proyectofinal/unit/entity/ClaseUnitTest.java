@@ -1,7 +1,9 @@
-package pat.proyectofinal.entity;
+package pat.proyectofinal.unit.entity;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import pat.proyectofinal.entity.Clase;
 import pat.proyectofinal.model.Idioma;
 
 

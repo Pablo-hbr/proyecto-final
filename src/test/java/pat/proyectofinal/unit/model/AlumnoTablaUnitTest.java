@@ -1,6 +1,8 @@
-package pat.proyectofinal.model;
+package pat.proyectofinal.unit.model;
 
 import org.junit.jupiter.api.Test;
+import pat.proyectofinal.model.AlumnoTabla;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AlumnoTablaUnitTest {

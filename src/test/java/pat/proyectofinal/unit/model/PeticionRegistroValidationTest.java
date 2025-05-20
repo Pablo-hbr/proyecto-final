@@ -1,4 +1,4 @@
-package pat.proyectofinal.model;
+package pat.proyectofinal.unit.model;
 
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -6,6 +6,7 @@ import jakarta.validation.ValidatorFactory;
 import jakarta.validation.ConstraintViolation;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import pat.proyectofinal.model.PeticionRegistro;
 
 
 import java.util.Set;
