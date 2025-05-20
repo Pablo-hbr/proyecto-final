@@ -8,37 +8,38 @@
 </head>
 <body>
 <header class="header">
-    <h1>Panel del Profesor</h1>
+    <h1>📘 Academia de Idiomas – Profesor</h1>
     <button id="btn-logout" class="btn logout">Cerrar sesión</button>
 </header>
 
-<main class="container">
-    <section class="card">
-        <h2>Alumnos Inscritos</h2>
+<main class="dashboard">
+    <section class="card full-width">
+        <h2>👨‍🏫 Clases y Alumnos</h2>
         <table class="styled-table" id="tabla-alumnos">
             <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Clase</th>
+                <th>👤 Alumno</th>
+                <th>📧 Email</th>
+                <th>📚 Clase</th>
+                <th>🕒 Hora</th>
             </tr>
             </thead>
             <tbody>
-            <!-- Se llenará por JS -->
+            <!-- Cargado dinámicamente -->
             </tbody>
         </table>
     </section>
 
-    <section class="card">
-        <h2>Añadir Nueva Clase</h2>
+    <section class="card full-width">
+        <h2>➕ Crear Nueva Clase</h2>
         <form id="form-clase" class="form">
             <div class="form-group">
-                <label for="nombre">Nombre de la clase:</label>
-                <input type="text" id="nombre" name="nombre" required />
+                <label for="nombre">Nombre de la Clase:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: A2 Inglés Lunes" required />
             </div>
 
             <div class="form-group">
-                <label for="aforo">Aforo:</label>
+                <label for="aforo">Aforo Máximo:</label>
                 <input type="number" id="aforo" name="aforo" required min="1" />
             </div>
 
@@ -52,12 +53,15 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn submit">Añadir clase</button>
+            <button type="submit" class="btn primary">Crear Clase</button>
         </form>
     </section>
 </main>
 
+<footer class="footer">
+    <p>© 2025 Academia de Idiomas · Proyecto PAT · GITT</p>
+</footer>
+
 <script src="admin.js"></script>
 </body>
 </html>
-
