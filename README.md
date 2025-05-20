@@ -1,4 +1,4 @@
-# 📘 Proyecto Final – Programación de Aplicaciones Telemáticas (PAT)
+#  Proyecto Final – Programación de Aplicaciones Telemáticas (PAT)
 
 Este es el proyecto final de la asignatura **PAT** desarrollado por:
 
@@ -7,7 +7,7 @@ Este es el proyecto final de la asignatura **PAT** desarrollado por:
 - Pablo Alonso
 - Pablo Hebrero
 
-## 📚 Descripción del proyecto
+## Descripción del proyecto
 
 Esta aplicación simula la gestión de una **academia de idiomas**, permitiendo:
 
@@ -25,7 +25,7 @@ El sistema incluye funcionalidades clave como:
 - Frontend con HTML, CSS y JavaScript
 - Backend en Spring Boot (Java 17), con base de datos embebida (H2)
 
-## 🧪 Usuario y datos por defecto
+## Usuario y datos por defecto
 
 Para facilitar las pruebas, la aplicación incluye por defecto:
 
@@ -38,11 +38,3 @@ Para facilitar las pruebas, la aplicación incluye por defecto:
     - Nombre: **Francés Lunes**
     - Aforo: **30 plazas**
 
-## 🚀 Tecnologías utilizadas
-
-- Java 17 + Spring Boot
-- HTML, CSS, JavaScript
-- Base de datos H2
-- Docker
-- GitHub Actions (CI)
-- Render.com (CD)
