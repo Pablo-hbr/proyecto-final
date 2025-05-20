@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro</title>
+  <script src="registro.js"></script>
+  <link rel="stylesheet" type="text/css" href="registro.css" />
+</head>
+<body>
+<form onsubmit="registrarUsuario(form2json(event))">
+  <fieldset>
+    <legend>👤</legend>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="name" id="nombre" required>
+
+    <label for="clase">Clase:</label>
+    <select name="clase" id="clase" required>
+      <!-- Las opciones se llenarán dinámicamente desde JS -->
+    </select>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" name="email" id="email" required>
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password" id="password" required pattern="^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).*$" title="Debe contener al menos una mayúscula, una minúscula y un número" minlength="8" onkeyup="compruebaPass()">
+    <label for="password2">Repetir contraseña:</label>
+    <input type="password" name="password2" id="password2" required onkeyup="compruebaPass()">
+    <p id="aviso"></p>
+    <hr>
+    <input type="submit" value="Registrarse">
+    <a href="login.html">Entrar</a>
+  </fieldset>
+</form>
+</body>
