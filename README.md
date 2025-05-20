@@ -16,14 +16,7 @@ Esta aplicación simula la gestión de una **academia de idiomas**, permitiendo:
 - La visualización de alumnos y clases desde un panel web dinámico
 - El uso de una arquitectura **frontend + backend** con integración y despliegue continuo
 
-El sistema incluye funcionalidades clave como:
-
-- Creación de nuevas clases con control de aforo
-- Registro de usuarios con validaciones
-- Reducción automática del aforo al inscribirse
-- Gestión de sesiones e inicio/cierre de sesión
-- Frontend con HTML, CSS y JavaScript
-- Backend en Spring Boot (Java 17), con base de datos embebida (H2)
+Para saber más sobre esta aplicación consulte la Wiki del repositorio.
 
 ## Usuario y datos por defecto
 
