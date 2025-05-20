@@ -9,8 +9,13 @@ WORKDIR /app
 # Copia el contenido del proyecto al contenedor
 COPY . .
 
-# Compila la app con Maven (sin tests para acelerar)
+#  DA PERMISO DE EJECUCIÓN AL MAVEN WRAPPER
+RUN chmod +x ./mvnw
+
+#  COMPILA LA APP
 RUN ./mvnw clean package -DskipTests
+
+
 
 # Render asigna el puerto mediante variable $PORT
 ENV PORT=8080
