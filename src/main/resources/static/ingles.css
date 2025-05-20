@@ -210,3 +210,20 @@ iframe {
 audio {
   margin-top: 10px;
 }
+
+
+button.correct {
+  background-color: #28a745 !important; /* Verde */
+  color: white;
+}
+
+button.incorrect {
+  background-color: #dc3545 !important; /* Rojo */
+  color: white;
+}
+
+button.correct:hover,
+button.incorrect:hover {
+  background-color: inherit !important;
+}
+

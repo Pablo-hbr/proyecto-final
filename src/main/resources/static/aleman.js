@@ -44,4 +44,23 @@ document.addEventListener("DOMContentLoaded", () => {
   loadGermanTest();
 });
 
+document.getElementById('btn-logout').addEventListener('click', cerrarSesion);
+
+function cerrarSesion() {
+  fetch('/api/users/me/session', {
+    method: 'DELETE',
+    credentials: 'include'
+  })
+    .then(response => {
+      if (response.ok) {
+        window.location.href = 'login.html';
+      } else {
+        throw new Error('No se pudo cerrar sesión');
+      }
+    })
+    .catch(error => {
+      alert('Error al cerrar sesión: ' + error.message);
+    });
+}
+
 
