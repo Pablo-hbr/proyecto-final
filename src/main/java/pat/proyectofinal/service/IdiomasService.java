@@ -22,11 +22,11 @@ import java.util.Optional;
 @Service
 public class IdiomasService {
     @Autowired
-    ClaseRepository claseRepository;
+    public ClaseRepository claseRepository;
     @Autowired
-    UsuarioRepository usuarioRepository;
+    public UsuarioRepository usuarioRepository;
     @Autowired
-    TokenRepository tokenRepository;
+    public TokenRepository tokenRepository;
 
     public Token login(String email, String password) {
         Optional<Usuario> usuarioOptional = usuarioRepository.findByEmail(email);
