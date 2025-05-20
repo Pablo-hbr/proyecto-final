@@ -2,58 +2,65 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Panel de Administración</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel del Profesor</title>
     <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
-<header>
-    <h1>👨‍💼 Panel de Administración</h1>
-    <p>Gestión de alumnos y clases</p>
-    <button id="btn-logout">Cerrar sesión</button>
+<header class="header">
+    <h1>📘 Academia de Idiomas – Profesor</h1>
+    <button id="btn-logout" class="btn logout">Cerrar sesión</button>
 </header>
 
-<!-- Mensaje de éxito o error -->
-<div id="mensaje"></div>
+<main class="dashboard">
+    <section class="card full-width">
+        <h2>👨‍🏫 Clases y Alumnos</h2>
+        <table class="styled-table" id="tabla-alumnos">
+            <thead>
+            <tr>
+                <th>👤 Alumno</th>
+                <th>📧 Email</th>
+                <th>📚 Clase</th>
+                <th>🕒 Hora</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Cargado dinámicamente -->
+            </tbody>
+        </table>
+    </section>
 
-<!-- Tabla de alumnos -->
-<section>
-    <h2>Alumnos inscritos</h2>
-    <table id="tabla-alumnos" border="1">
-        <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Clase</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Se llenará dinámicamente -->
-        </tbody>
-    </table>
-</section>
+    <section class="card full-width">
+        <h2>➕ Crear Nueva Clase</h2>
+        <form id="form-clase" class="form">
+            <div class="form-group">
+                <label for="nombre">Nombre de la Clase:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: A2 Inglés Lunes" required />
+            </div>
 
-<!-- Formulario para añadir clase -->
-<section>
-    <h2>Añadir nueva clase</h2>
-    <form id="form-clase">
-        <label for="nombre">Nombre de la clase:</label>
-        <input type="text" id="nombre" name="nombre" required />
+            <div class="form-group">
+                <label for="aforo">Aforo Máximo:</label>
+                <input type="number" id="aforo" name="aforo" required min="1" />
+            </div>
 
-        <label for="aforo">Aforo:</label>
-        <input type="number" id="aforo" name="aforo" required min="1" />
+            <div class="form-group">
+                <label for="idioma">Idioma:</label>
+                <select id="idioma" name="idioma" required>
+                    <option value="INGLES">Inglés</option>
+                    <option value="FRANCES">Francés</option>
+                    <option value="ALEMAN">Alemán</option>
+                    <option value="ITALIANO">Italiano</option>
+                </select>
+            </div>
 
-        <label for="idioma">Idioma:</label>
-        <select id="idioma" name="idioma" required>
-            <option value="INGLES">Inglés</option>
-            <option value="FRANCES">Francés</option>
-            <option value="ALEMAN">Alemán</option>
-            <option value="ITALIANO">Italiano</option>
-        </select>
+            <button type="submit" class="btn primary">Crear Clase</button>
+        </form>
+    </section>
+</main>
 
-        <button type="submit">Añadir clase</button>
-    </form>
-</section>
+<footer class="footer">
+    <p>© 2025 Academia de Idiomas · Proyecto PAT · GITT</p>
+</footer>
 
 <script src="admin.js"></script>
 </body>
