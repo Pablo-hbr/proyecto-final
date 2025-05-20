@@ -15,13 +15,30 @@
 <main class="dashboard">
     <section class="card full-width">
         <h2>👨‍🏫 Clases y Alumnos</h2>
+
+        <!-- Tabla de alumnos -->
+        <h3>👥 Alumnos</h3>
         <table class="styled-table" id="tabla-alumnos">
             <thead>
             <tr>
                 <th>👤 Alumno</th>
                 <th>📧 Email</th>
                 <th>📚 Clase</th>
-                <th>🕒 Hora</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Cargado dinámicamente -->
+            </tbody>
+        </table>
+
+        <!-- Tabla de clases -->
+        <h3 style="margin-top: 2rem;">📋 Clases</h3>
+        <table class="styled-table" id="tabla-clases">
+            <thead>
+            <tr>
+                <th>📚 Nombre</th>
+                <th>🌐 Idioma</th>
+                <th>👥 Aforo</th>
             </tr>
             </thead>
             <tbody>
@@ -29,6 +46,8 @@
             </tbody>
         </table>
     </section>
+
+
 
     <section class="card full-width">
         <h2>➕ Crear Nueva Clase</h2>

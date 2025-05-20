@@ -2,8 +2,10 @@ package pat.proyectofinal.service;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+import org.springframework.web.server.ResponseStatusException;
 import pat.proyectofinal.entity.Clase;
 import pat.proyectofinal.model.Idioma;
 import pat.proyectofinal.entity.Usuario;
@@ -64,17 +66,16 @@ public class IdiomasService {
 
     public Perfil registrar(PeticionRegistro register) {
         if (usuarioRepository.findByEmail(register.email()).isPresent()) {
-            return null;
-        }
-        if (claseRepository.findById(register.idClase()).isEmpty()) {
-            return null;
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El correo ya está registrado");
         }
 
-        Clase clase = claseRepository.findById(register.idClase()).get();
+        Clase clase = claseRepository.findById(register.idClase())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,"Clase no encontrada"));
 
-        if(clase.getAforo()<1){
-            return null;
+        if (clase.getAforo() < 1) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La clase ya está completa");
         }
+
         clase.setAforo(clase.getAforo()-1);
         claseRepository.save(clase);
         Usuario newUser = new Usuario(register.name(), Role.ALUMNO, register.email(), register.password(), clase);
@@ -116,15 +117,15 @@ public class IdiomasService {
                     "Administrador",
                     Role.ADMINISTRADOR,
                     "admin@admin.com",
-                    "admin",
+                    "PAT123",
                     null
             );
             usuarioRepository.save(admin);
         }
-        if (claseRepository.findByNombre("Francés").isEmpty()) {
+        if (claseRepository.findByNombre("Francés Lunes").isEmpty()) {
             Clase frances = new Clase();
-            frances.setNombre("Francés");
-            frances.setAforo(30); // Puedes ajustar el aforo según lo que necesites
+            frances.setNombre("Francés Lunes");
+            frances.setAforo(30);
             frances.setIdioma(Idioma.FRANCES);
             claseRepository.save(frances);
         }
