@@ -32,14 +32,28 @@ function compruebaPass() {
 }
 
 function registrarUsuario(datosJsonFormulario) {
-  if (!compruebaPass()) return;
-  fetch('/api/users', {method: 'post', body: datosJsonFormulario, headers: {'content-type': 'application/json'}})
-    .then(response => {
-      if (response.ok) location.href = 'login.html?registrado';
-      else if (response.status === 409) mostrarAviso('✖︎ Usuario ya registrado', 'error');
-      else mostrarAviso('✖︎ Error en el registro', 'error');
-    });
+    if (!compruebaPass()) return;
+
+    fetch('/api/users', {
+        method: 'POST',
+        body: datosJsonFormulario,
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(async response => {
+            if (response.ok) {
+                location.href = 'login.html?registrado';
+            } else {
+                const errorBody = await response.json();
+                const mensaje = errorBody.message || 'Error en el registro';
+                mostrarAviso(`✖︎ ${mensaje}`, 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error de red:', error);
+            mostrarAviso('✖︎ Error de red al registrar', 'error');
+        });
 }
+
 
 function mostrarAviso(texto, tipo) {
   const aviso = document.getElementById("aviso");
@@ -60,5 +74,3 @@ function form2json(event) {
   }
   return JSON.stringify(obj);
 }
-
-
