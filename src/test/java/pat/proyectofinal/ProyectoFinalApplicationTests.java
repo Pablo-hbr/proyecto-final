@@ -9,5 +9,9 @@ class ProyectoFinalApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+	/**
+	 * Verifica que el contexto de Spring Boot carga correctamente.
+	 * Test de humo generado automáticamente.
+	 */
 
 }

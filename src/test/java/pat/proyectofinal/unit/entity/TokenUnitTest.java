@@ -1,6 +1,9 @@
-package pat.proyectofinal.entity;
+package pat.proyectofinal.unit.entity;
 
 import org.junit.jupiter.api.Test;
+import pat.proyectofinal.entity.Token;
+import pat.proyectofinal.entity.Usuario;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TokenUnitTest {

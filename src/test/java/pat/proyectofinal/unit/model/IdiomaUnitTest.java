@@ -1,8 +1,10 @@
-package pat.proyectofinal.model;
+package pat.proyectofinal.unit.model;
 
 
 
 import org.junit.jupiter.api.Test;
+import pat.proyectofinal.model.Idioma;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class IdiomaUnitTest {
