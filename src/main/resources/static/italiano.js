@@ -61,3 +61,27 @@ function cerrarSesion() {
       alert('Error al cerrar sesión: ' + error.message);
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btnBaja = document.getElementById('btn-baja');
+  if (btnBaja) {
+    btnBaja.addEventListener('click', darseDeBaja);
+  }
+});
+
+function darseDeBaja() {
+  if (!confirm('¿Estás seguro de que quieres darte de baja?')) return;
+
+  fetch('/api/users/me', {
+    method: 'DELETE',
+    credentials: 'include'
+  })
+    .then(response => {
+      if (response.ok) {
+        window.location.href = 'login.html';
+      } else {
+        throw new Error('No se pudo eliminar la cuenta');
+      }
+    })
+    .catch(error => alert('✖ ' + error.message));
+}
