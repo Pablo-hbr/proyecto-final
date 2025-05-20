@@ -107,3 +107,17 @@ a:hover {
   text-decoration: underline;
 }
 
+.btn.volver {
+  background-color: #f0ad4e;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn.volver:hover {
+  background-color: #ec971f;
+}
