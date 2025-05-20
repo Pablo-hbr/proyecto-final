@@ -31,3 +31,6 @@ Para facilitar las pruebas, la aplicación incluye por defecto:
     - Nombre: **Francés Lunes**
     - Aforo: **30 plazas**
 
+## Acceso a la aplicación
+La aplicación se puede acceder a través de la siguiente URL:
+https://academiaidiomaspat.onrender.com/inicio.html
