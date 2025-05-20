@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alemán - Panel del Alumno</title>
+  <link rel="stylesheet" href="aleman.css" />
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="#vocabulario">Vocabulario</a></li>
+    <li><a href="#multimedia">Multimedia</a></li>
+    <li><a href="#test">Test</a></li>
+  </ul>
+</nav>
+<header>
+  <h1>Bienvenido a tu curso de <span style="color: #ffd700;">Alemán</span></h1>
+  <p>Explora los recursos disponibles para mejorar tu nivel.</p>
+</header>
+<section class="botones">
+  <button id="btn-logout">Cerrar sesión</button>
+  <button id="btn-baja">Darse de baja</button>
+</section>
+<section id="vocabulario" class="card">
+  <h2>📘 Vocabulario en Alemán</h2>
+  <p class="description">Haz clic en cada tarjeta para ver la traducción y vuelve a hacer clic para regresar al español.</p>
+  <div class="flashcard-container">
+    <div class="flashcard" data-original="Hola" data-translation="Hallo">Hola</div>
+    <div class="flashcard" data-original="Gracias" data-translation="Danke">Gracias</div>
+    <div class="flashcard" data-original="Adiós" data-translation="Tschüss">Adiós</div>
+    <div class="flashcard" data-original="Por favor" data-translation="Bitte">Por favor</div>
+    <div class="flashcard" data-original="Perro" data-translation="Hund">Perro</div>
+    <div class="flashcard" data-original="Gato" data-translation="Katze">Gato</div>
+  </div>
+</section>
+<section id="multimedia" class="language-section german">
+  <h2>🎮 Recursos Multimedia en Alemán</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/YTz5qAg4f1E" allowfullscreen></iframe>
+  </div>
+  <h3>Audio de pronunciación</h3>
+  <audio controls>
+    <source src="multimedia/aleman.mp3" type="audio/mpeg">
+  </audio>
+</section>
+<section id="test" class="card">
+  <h2>📝 Test de Vocabulario en Alemán</h2>
+  <div class="quiz-container" id="quiz">
+    <div class="question" id="question1"></div>
+    <div class="options" id="options1"></div>
+    <div class="question" id="question2"></div>
+    <div class="options" id="options2"></div>
+    <p id="result-message"></p>
+  </div>
+</section>
+<script src="aleman.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inglés - Panel del Alumno</title>
+  <link rel="stylesheet" href="ingles.css" />
+</head>
+<body>
+
+<!-- Menú principal -->
+<nav>
+  <ul>
+    <li><a href="#vocabulario">Vocabulario</a></li>
+    <li><a href="#multimedia">Multimedia</a></li>
+    <li><a href="#test">Test</a></li>
+  </ul>
+</nav>
+
+<!-- Cabecera -->
+<header>
+  <h1>Bienvenido a tu curso de <span style="color: #ffd700;">Inglés</span></h1>
+  <p>Explora los recursos disponibles para mejorar tu nivel.</p>
+</header>
+
+<!-- Botones -->
+<section class="botones">
+  <button id="btn-logout">Cerrar sesión</button>
+  <button id="btn-baja">Darse de baja</button>
+</section>
+
+<!-- Vocabulario -->
+<section id="vocabulario" class="card">
+  <h2>📘 Vocabulario en Inglés</h2>
+  <p class="description">
+    Practica las palabras más comunes en español y su traducción al inglés. 
+    Haz clic en cada tarjeta para ver la traducción y vuelve a hacer clic para regresar al español.
+  </p>
+
+  <div class="flashcard-container">
+    <div class="flashcard" data-original="Hola" data-translation="Hello">Hola</div>
+    <div class="flashcard" data-original="Gracias" data-translation="Thank you">Gracias</div>
+    <div class="flashcard" data-original="Adiós" data-translation="Goodbye">Adiós</div>
+    <div class="flashcard" data-original="Por favor" data-translation="Please">Por favor</div>
+    <div class="flashcard" data-original="Perro" data-translation="Dog">Perro</div>
+    <div class="flashcard" data-original="Gato" data-translation="Cat">Gato</div>
+  </div>
+</section>
+
+<!-- Multimedia -->
+<section id="multimedia" class="language-section english">
+  <h2>🎬 Recursos Multimedia en Inglés</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/4Ht9agqAEoo" allowfullscreen></iframe>
+  </div>
+  <h3>Audio de pronunciación</h3>
+  <audio controls>
+    <source src="multimedia/fishing.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+</section>
+
+<!-- Test -->
+<section id="test" class="card">
+  <h2>📝 Test de Vocabulario en Inglés</h2>
+  <p>Responde las siguientes preguntas para evaluar tu conocimiento.</p>
+
+  <div class="quiz-container" id="quiz">
+    <div class="question" id="question1"></div>
+    <div class="options" id="options1"></div>
+    <div class="question" id="question2"></div>
+    <div class="options" id="options2"></div>
+    <p id="result-message"></p>
+  </div>
+</section>
+
+
+<script src="ingles.js"></script>
+</body>
+</html>
