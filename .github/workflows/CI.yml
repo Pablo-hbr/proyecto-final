@@ -1,0 +1,19 @@
+name: Java CI with Maven   # Nombre del workflow
+
+on:
+  pull_request:            # Se activa en PRs
+    branches: ["main"]     # Solo si es hacia la rama "main"
+
+jobs:
+  build:                   # Job llamado "build"
+    runs-on: ubuntu-latest # Máquina virtual Ubuntu
+    steps:
+      - uses: actions/checkout@v3             # Paso 1: Clonar código
+      - name: Set up JDK 17                   # Paso 2: Instalar Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven                # Paso 3: Ejecutar tests
+        run: mvn test
