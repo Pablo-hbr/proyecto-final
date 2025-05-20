@@ -30,16 +30,19 @@ function entrar(datosJsonFormulario) {
         const idioma = (perfil.idioma || '').toLowerCase().trim();
 
         switch (idioma) {
-          case 'FRANCES':
+          case 'francés':
+          case 'frances':
             window.location.href = 'frances.html';
             break;
-          case 'INGLES':
+          case 'inglés':
+          case 'ingles':
             window.location.href = 'ingles.html';
             break;
-          case 'ALEMAN':
+          case 'alemán':
+          case 'aleman':
             window.location.href = 'aleman.html';
             break;
-          case 'ITALIANO':
+          case 'italiano':
             window.location.href = 'italiano.html';
             break;
           default:
@@ -49,6 +52,7 @@ function entrar(datosJsonFormulario) {
       }
     });
 }
+
 
 
 function mostrarAviso(texto, tipo) {
