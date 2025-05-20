@@ -2,6 +2,8 @@ package pat.proyectofinal.integration.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 import pat.proyectofinal.entity.Clase;
 import pat.proyectofinal.entity.Token;
 import pat.proyectofinal.entity.Usuario;
@@ -148,9 +150,12 @@ public class IdiomasServiceUnitTest {
         PeticionRegistro registro = new PeticionRegistro("Juan", "juan@mail.com", "Clave123", 1L);
         when(usuarioRepository.findByEmail("juan@mail.com")).thenReturn(Optional.of(new Usuario()));
 
-        Perfil perfil = service.registrar(registro);
+        ResponseStatusException ex = assertThrows(ResponseStatusException.class, () -> {
+            service.registrar(registro);
+        });
 
-        assertNull(perfil);
+        assertEquals(HttpStatus.BAD_REQUEST, ex.getStatusCode());
+        assertEquals("El correo ya está registrado", ex.getReason());
     }
 
     @Test
@@ -159,9 +164,12 @@ public class IdiomasServiceUnitTest {
         when(usuarioRepository.findByEmail("juan@mail.com")).thenReturn(Optional.empty());
         when(claseRepository.findById(1L)).thenReturn(Optional.empty());
 
-        Perfil perfil = service.registrar(registro);
+        ResponseStatusException ex = assertThrows(ResponseStatusException.class, () -> {
+            service.registrar(registro);
+        });
 
-        assertNull(perfil);
+        assertEquals(HttpStatus.BAD_REQUEST, ex.getStatusCode());
+        assertEquals("Clase no encontrada", ex.getReason());
     }
 
     @Test
@@ -172,9 +180,12 @@ public class IdiomasServiceUnitTest {
         when(usuarioRepository.findByEmail("juan@mail.com")).thenReturn(Optional.empty());
         when(claseRepository.findById(1L)).thenReturn(Optional.of(clase));
 
-        Perfil perfil = service.registrar(registro);
+        ResponseStatusException ex = assertThrows(ResponseStatusException.class, () -> {
+            service.registrar(registro);
+        });
 
-        assertNull(perfil);
+        assertEquals(HttpStatus.BAD_REQUEST, ex.getStatusCode());
+        assertEquals("La clase ya está completa", ex.getReason());
     }
 
     @Test
