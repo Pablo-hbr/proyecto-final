@@ -61,3 +61,12 @@ function darseDeBaja() {
 function mostrarMensaje(texto) {
     document.getElementById('mensaje').textContent = texto;
 }
+function flipCard(card) {
+  const original = card.dataset.original;
+  const translation = card.dataset.translation;
+  if (card.textContent === original) {
+    card.textContent = translation;
+  } else {
+    card.textContent = original;
+  }
+}
